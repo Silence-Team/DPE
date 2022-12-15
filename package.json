@@ -1,0 +1,19 @@
+{
+  "name": "dpe",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r dotenv/config index.js",
+    "dev": "nodemon -r dotenv/config index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "mongoose": "^6.7.2"
+  }
+}
