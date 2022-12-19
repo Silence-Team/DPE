@@ -1,5 +1,5 @@
 const { EmbedBuilder, codeBlock } = require('discord.js')
-const config = require('../Util/config')
+const config = require('../Util/Config')
 
 module.exports = {
   run: (message) => {

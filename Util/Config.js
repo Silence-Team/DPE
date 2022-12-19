@@ -1,9 +1,9 @@
 module.exports = {
   colors: {
-    blurple: '#FFADAD',
-    red: '#FF4D6D',
-    yellow: '#FDFFB6',
-    green: '#CAFFBF',
+    blurple: '#5865F2',
+    red: '#ED4245',
+    yellow: '#FEE75C',
+    green: '#57F287',
   },
   emojis: {
     coins: {
@@ -20,5 +20,6 @@ module.exports = {
       voices: '763037786076610560',
       economics: '1049246617536057364',
     },
+    starboard: '998320597010489444',
   },
 }

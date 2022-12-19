@@ -1,6 +1,6 @@
 const { EmbedBuilder } = require('discord.js')
 const ParseUnix = require('../Util/ParseUnix')
-const config = require('../Util/config')
+const config = require('../Util/Config')
 
 module.exports = {
   run: async (member) => {

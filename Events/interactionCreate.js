@@ -25,7 +25,8 @@ module.exports = {
     }
 
     const action = interaction.client[category]?.get(
-      interaction.commandName || interaction.customId
+      interaction.commandName?.split('-')[0] ||
+        interaction.customId?.split('-')[0]
     )
 
     if (!action) return

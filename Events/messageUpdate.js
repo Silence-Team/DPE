@@ -5,7 +5,7 @@ const {
   ButtonBuilder,
   ButtonStyle,
 } = require('discord.js')
-const config = require('../Util/config')
+const config = require('../Util/Config')
 
 module.exports = {
   run: (OldMessage, NewMessage) => {
@@ -24,8 +24,9 @@ module.exports = {
         iconURL: NewMessage.member.displayAvatarURL(),
       })
       .setDescription(
-        `**Было:**\n${codeBlock(OldMessage.content)}
-         **Стало:**\n${codeBlock(NewMessage.content)}`
+        `**Было:**\n${codeBlock(OldMessage.content)}\n**Стало:**\n${codeBlock(
+          NewMessage.content
+        )}`
       )
 
     const row = new ActionRowBuilder().addComponents(
