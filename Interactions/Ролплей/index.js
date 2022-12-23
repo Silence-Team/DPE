@@ -44,7 +44,7 @@ module.exports = {
 
     if (!member && !data.solo) {
       return await interaction.reply({
-        content: '**Для этого действия необзодимо указать участника**',
+        content: '**Для этого действия необходимо указать участника**',
         ephemeral: true,
       })
     }
