@@ -53,6 +53,6 @@ module.exports = {
 
     await channel.send({ embeds: [embed] })
 
-    if (!member.user.bot) await chat.send({ content: `**➡️** ${member}` })
+    if (!member.user.bot) await chat.send({ content: `**👋 ${member}**` })
   },
 }

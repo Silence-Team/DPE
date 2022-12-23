@@ -6,6 +6,7 @@ const {
   Partials,
 } = require('discord.js')
 const { readdirSync } = require('fs')
+const tenor = require('tenorjs')
 
 const client = new Client({
   intents: [
@@ -42,6 +43,14 @@ handlers.forEach((name) => {
   const handler = require(`./Handlers/${name}`)
   handler.run(client)
   console.log(`Handler ${name} executed`)
+})
+
+client.tenor = tenor.client({
+  Key: process.env.tenorKey,
+  Filter: 'low',
+  Locale: 'en_US',
+  MediaFilter: 'minimal',
+  DateFormat: 'D/MM/YYYY - H:mm:ss A',
 })
 
 client.login(process.env.token)
