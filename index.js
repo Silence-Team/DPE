@@ -23,7 +23,7 @@ const client = new Client({
     GatewayIntentBits.GuildVoiceStates,
     GatewayIntentBits.MessageContent,
   ],
-  partials: [Partials.Message, Partials.Reaction],
+  partials: [Partials.Message, Partials.Reaction, Partials.GuildMember],
   presence: {
     status: 'online',
     activities: [{ name: 'Silence', type: 'LISTENING' }],
