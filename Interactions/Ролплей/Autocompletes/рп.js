@@ -19,6 +19,8 @@ module.exports = {
       responses.push(filtered[i])
     }
 
+    responses.sort((a, b) => a.name.localeCompare(b.name))
+
     await interaction.respond(responses)
   },
 }
