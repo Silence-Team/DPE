@@ -47,7 +47,7 @@ module.exports = {
         ])
 
         await channel.send({ embeds: [embed], components: [row] })
-      } else if (reaction.count > 1) {
+      } else if (reaction.count > 3) {
         const message = channel.messages.cache.find(
           (message) =>
             message.components[0].components[0].url === reaction.message.url
