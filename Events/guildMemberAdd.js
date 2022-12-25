@@ -1,6 +1,6 @@
 const { EmbedBuilder } = require('discord.js')
 const ParseUnix = require('../Util/ParseUnix')
-const config = require('../Util/Config')
+const { channels, colors, roles } = require('../Util/Config')
 
 module.exports = {
   run: async (member) => {
@@ -15,12 +15,10 @@ module.exports = {
     //   return
     // }
 
-    const channel = member.guild.channels.cache.get(
-      config.channels.logs.members
-    )
+    const channel = member.guild.channels.cache.get(channels.logs.members)
 
     const embed = new EmbedBuilder()
-      .setColor(config.colors.green)
+      .setColor(colors.green)
       .setDescription(`**➡️ ${member} зашёл**`)
       .setAuthor({
         name: member.displayName,
@@ -39,7 +37,7 @@ module.exports = {
         }
       )
 
-    const chat = member.guild.channels.cache.get(config.channels.chat)
+    const chat = member.guild.channels.cache.get(channels.chat)
 
     if (member.user.bot) {
       embed.setDescription(`**🔩 Добавлен бот ${member}**`).setFields({
@@ -53,6 +51,9 @@ module.exports = {
 
     await channel.send({ embeds: [embed] })
 
-    if (!member.user.bot) await chat.send({ content: `**👋 ${member}**` })
+    if (!member.user.bot) {
+      await chat.send({ content: `**👋 ${member}**` })
+      await member.roles.add(roles.start)
+    }
   },
 }
