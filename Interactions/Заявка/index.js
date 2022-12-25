@@ -6,7 +6,7 @@ const {
   TextInputStyle,
   ActionRowBuilder,
 } = require('discord.js')
-const { roles } = require('../../Util/config')
+const { roles } = require('../../Util/Config')
 
 module.exports = {
   data: {

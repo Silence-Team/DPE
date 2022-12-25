@@ -4,8 +4,7 @@ const {
   ButtonBuilder,
   ButtonStyle,
 } = require('discord.js')
-const { channels, roles } = require('../../../Util/config')
-const config = require('../../../Util/config')
+const { channels, roles, colors } = require('../../../Util/Config')
 
 module.exports = {
   run: async (interaction) => {
@@ -18,7 +17,7 @@ module.exports = {
         name: interaction.member.displayName,
         iconURL: interaction.member.displayAvatarURL(),
       })
-      .setColor(config.colors.blurple)
+      .setColor(colors.blurple)
       .setTitle(`Заявка на ${name}а`)
       .setDescription(`**Автор:** ${interaction.member}`)
 
