@@ -85,7 +85,7 @@ module.exports = {
     })
 
     const gifs = await interaction.client.tenor.Search.Query(
-      `anime ${action} ${member ? 'together' : 'solo'}`,
+      `anime ${action}`,
       '100'
     )
 
