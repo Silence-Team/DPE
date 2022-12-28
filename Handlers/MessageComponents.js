@@ -22,7 +22,7 @@ module.exports = {
           if (!existsSync(`./Interactions/${dir}/${ComponentName}`)) return
 
           readdirSync(`./Interactions/${dir}/${ComponentName}`)
-            .filter((file) => file.endsWith('js'))
+            .filter((file) => file.endsWith('.js'))
             .forEach((FileInDir) => {
               const pull = require(`../Interactions/${dir}/${ComponentName}/${FileInDir}`)
               if (!pull.run) return
