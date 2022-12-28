@@ -4,6 +4,7 @@ const {
   GatewayIntentBits,
   Collection,
   Partials,
+  ActivityType,
 } = require('discord.js')
 const { readdirSync } = require('fs')
 const tenor = require('tenorjs')
@@ -32,7 +33,7 @@ const client = new Client({
   ],
   presence: {
     status: 'online',
-    activities: [{ name: 'Silence', type: 'LISTENING' }],
+    activities: [{ name: 'Silence', type: ActivityType.Watching }],
   },
 })
 
