@@ -17,7 +17,7 @@ module.exports = {
         client.commands.set(pull.data.name.toLowerCase(), pull.run)
       } else if (lstatSync(`./Interactions/${file}`).isDirectory()) {
         readdirSync(`./Interactions/${file}`)
-          .filter((file) => file.endsWith('js'))
+          .filter((file) => file.endsWith('.js'))
           .forEach((FileInDir) => {
             const pull = require(`../Interactions/${file}/${FileInDir}`)
 
