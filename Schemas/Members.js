@@ -5,6 +5,9 @@ const schema = Schema({
   balance: Number,
   requests: Array,
   guild: String,
+  passport: {
+    about: String,
+  },
 })
 
 module.exports = model('Members', schema)
