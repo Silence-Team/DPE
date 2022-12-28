@@ -4,6 +4,7 @@ const {
 } = require('discord.js')
 const { channels } = require('../../Util/Config')
 const RoleplayData = require('../../Util/RoleplayData')
+const ValidateString = require('../../Util/ValidateString')
 
 module.exports = {
   data: {
@@ -41,6 +42,17 @@ module.exports = {
     const RPChannel = interaction.guild.channels.cache.get(channels.roleplay)
 
     const data = RoleplayData.find((obj) => obj.value === action)
+
+    const rule = (await interaction.guild.autoModerationRules.fetch()).find(
+      (rule) => rule.name === 'Запрещённые слова'
+    )
+
+    if (ValidateString(words, rule)) {
+      return await interaction.reply({
+        content: '**В тексте содержаться запрещённые слова**',
+        ephemeral: true,
+      })
+    }
 
     if (!member && !data.solo) {
       return await interaction.reply({
