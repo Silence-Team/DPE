@@ -1,6 +1,8 @@
 module.exports = (string, rule) => {
   const words = string.split(/ /g)
 
+  if (!words.length) return false
+
   const keywords = rule.triggerMetadata.keywordFilter
 
   return keywords.some((key) => {
