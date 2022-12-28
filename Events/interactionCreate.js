@@ -4,17 +4,17 @@ module.exports = {
   run: async (interaction) => {
     let category
 
-    if (interaction.type == InteractionType.ApplicationCommand) {
+    if (interaction.isChatInputCommand()) {
       category = 'commands'
     } else if (interaction.isButton()) {
       category = 'buttons'
-    } else if (
-      interaction.type == InteractionType.ApplicationCommandAutocomplete
-    ) {
+    } else if (interaction.isAutocomplete()) {
       category = 'autocompletes'
     } else if (interaction.isMessageContextMenuCommand()) {
-      category = 'contexts'
-    } else if (interaction.type == InteractionType.ModalSubmit) {
+      category = 'contextsmessages'
+    } else if (interaction.isUserContextMenuCommand()) {
+      category = 'contextsusers'
+    } else if (interaction.isModalSubmit()) {
       category = 'modals'
     } else if (
       interaction.isStringSelectMenu() ||
