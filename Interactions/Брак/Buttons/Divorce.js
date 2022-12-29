@@ -26,7 +26,7 @@ module.exports = {
       })
     }
 
-    const MarriagesChannel = await interaction.guild.channels.fetch(
+    const MarriagesChannel = interaction.guild.channels.cache.get(
       channels.marriages
     )
 
