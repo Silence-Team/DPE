@@ -61,7 +61,7 @@ module.exports = {
       ephemeral: true,
     })
 
-    const MarriagesChannel = interaction.guild.channels.cache.get(
+    const MarriagesChannel = await interaction.guild.channels.fetch(
       channels.marriages
     )
 
