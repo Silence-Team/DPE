@@ -26,6 +26,7 @@ module.exports = {
     },
     starboard: '998320597010489444',
     roleplay: '824414657841332264',
+    marriages: '864118592135626762',
   },
   roles: {
     moderation: {
