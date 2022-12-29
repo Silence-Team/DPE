@@ -7,6 +7,10 @@ const schema = Schema({
   guild: String,
   passport: {
     about: String,
+    marriage: {
+      id: String,
+      timestamp: Number,
+    },
   },
 })
 
