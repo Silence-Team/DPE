@@ -4,8 +4,8 @@ const config = require('../Util/Config')
 
 module.exports = {
   run: async (member) => {
-    if (member.joinedTimestamp - member.user.createdTimestamp <= 86_400_000)
-      return
+    // if (member.joinedTimestamp - member.user.createdTimestamp <= 86_400_000)
+    //   return
 
     const channel = member.guild.channels.cache.get(
       config.channels.logs.members
