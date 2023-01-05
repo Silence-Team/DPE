@@ -4,12 +4,12 @@ module.exports = {
   run: async (interaction) => {
     const users = interaction.message.mentions.parsedUsers.toJSON()
 
-    // if (interaction.user !== users[0]) {
-    //   return await interaction.reply({
-    //     content: '**Ты не можешь использовать это**',
-    //     ephemeral: true,
-    //   })
-    // }
+    if (interaction.user !== users[0]) {
+      return await interaction.reply({
+        content: '**Ты не можешь использовать это**',
+        ephemeral: true,
+      })
+    }
 
     await interaction.update({
       content: `🛑 ${interaction.member} и ${users[1]} больше не в браке`,
