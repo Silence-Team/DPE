@@ -19,7 +19,7 @@ module.exports = {
 
     const embed = new EmbedBuilder()
       .setColor(colors.green)
-      .setDescription(`**➡️ ${member} зашёл**`)
+      .setDescription(`**➡️ ${member}**`)
       .setAuthor({
         name: member.displayName,
         iconURL: member.displayAvatarURL(),
