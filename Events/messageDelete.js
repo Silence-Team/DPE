@@ -1,4 +1,10 @@
-const { EmbedBuilder, codeBlock } = require('discord.js')
+const {
+  EmbedBuilder,
+  codeBlock,
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
+} = require('discord.js')
 const config = require('../Util/Config')
 
 module.exports = {
@@ -18,6 +24,15 @@ module.exports = {
       config.channels.logs.messages
     )
 
-    channel.send({ embeds: [embed] })
+    const row = new ActionRowBuilder().addComponents(
+      new ButtonBuilder()
+        .setStyle(ButtonStyle.Secondary)
+        .setEmoji('🔗')
+        .setLabel(`Канал: ${message.channel.name}`)
+        .setDisabled(true)
+        .setCustomId('empty')
+    )
+
+    channel.send({ embeds: [embed], components: [row] })
   },
 }

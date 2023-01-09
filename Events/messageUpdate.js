@@ -29,6 +29,10 @@ module.exports = {
         )}`
       )
 
+    const channel = NewMessage.guild.channels.cache.get(
+      config.channels.logs.messages
+    )
+
     const row = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
         .setStyle(ButtonStyle.Link)
@@ -37,10 +41,15 @@ module.exports = {
         .setLabel('Перейти')
     )
 
-    const channel = NewMessage.guild.channels.cache.get(
-      config.channels.logs.messages
+    const ChannelRow = new ActionRowBuilder().addComponents(
+      new ButtonBuilder()
+        .setStyle(ButtonStyle.Secondary)
+        .setEmoji('🔗')
+        .setLabel(`Канал: ${NewMessage.channel.name}`)
+        .setDisabled(true)
+        .setCustomId('empty')
     )
 
-    channel.send({ embeds: [embed], components: [row] })
+    channel.send({ embeds: [embed], components: [ChannelRow, row] })
   },
 }
