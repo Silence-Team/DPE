@@ -24,8 +24,9 @@ module.exports = {
     fields.fields.forEach((field) => {
       embed.addFields([
         {
-          name:
-            field.customId.charAt(0).toUpperCase() + field.customId.slice(1),
+          name: (
+            field.customId.charAt(0).toUpperCase() + field.customId.slice(1)
+          ).replaceAll('_', ' '),
           value: field.value,
           inline: true,
         },
@@ -37,6 +38,9 @@ module.exports = {
     switch (name) {
       case 'ивентор':
         role = 'eventor'
+        break
+      case 'модератор':
+        role = 'helper'
         break
     }
 
