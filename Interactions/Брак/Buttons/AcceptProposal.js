@@ -3,7 +3,6 @@ const CheckMarriage = require('../Functions/CheckMarriage')
 
 module.exports = {
   run: async (interaction) => {
-    await interaction.deferUpdate()
     const users = interaction.message.mentions.parsedUsers.toJSON()
 
     if (interaction.user !== users[0]) {
@@ -42,7 +41,7 @@ module.exports = {
     const gif =
       gifs[Math.floor(Math.random() * gifs.length)].media_formats.gif.url
 
-    await interaction.editReply({
+    await interaction.update({
       content: `💍 ${interaction.member} и ${users[1]} теперь в браке`,
       components: [],
       files: [gif],
