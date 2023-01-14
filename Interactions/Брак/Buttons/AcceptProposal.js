@@ -54,7 +54,7 @@ module.exports = {
       {
         $set: {
           'passport.marriage': {
-            id: users[1].id,
+            id: interaction.member.id,
             timestamp,
           },
         },
@@ -67,7 +67,7 @@ module.exports = {
       {
         $set: {
           'passport.marriage': {
-            id: interaction.member.id,
+            id: users[1].id,
             timestamp,
           },
         },
