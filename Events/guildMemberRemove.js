@@ -68,7 +68,7 @@ module.exports = {
         )
 
         await MarriagesChannel.send({
-          content: `🛑 ${member} и <@${MemberData.id}> больше не в браке`,
+          content: `🛑 ${member} и <@${MemberID}> больше не в браке`,
         })
       }
     }
