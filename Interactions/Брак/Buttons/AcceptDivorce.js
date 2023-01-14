@@ -19,22 +19,21 @@ module.exports = {
     const InvokerData = await Members.findOne({ id: users[1].id })
     const MemberData = await Members.findOne({ id: interaction.member.id })
 
-    let InvokerPassport = InvokerData?.passport || {}
-    InvokerPassport.marriage = {}
+    const InvokerPassport = InvokerData?.passport || {}
+    const MemberPassport = MemberData?.passport || {}
 
-    let MemberPassport = MemberData?.passport || {}
-    MemberPassport.marriage = {}
+    if (Object.keys(InvokerPassport)?.length) {
+      await Members.findOneAndUpdate(
+        { id: users[1].id },
+        { $unset: { 'passport.marriage': '' } }
+      )
+    }
 
-    await Members.findOneAndUpdate(
-      { id: users[1].id },
-      { passport: InvokerPassport },
-      { upsert: true }
-    )
-
-    await Members.findOneAndUpdate(
-      { id: interaction.member.id },
-      { passport: MemberPassport },
-      { upsert: true }
-    )
+    if (Object.keys(MemberPassport)?.length) {
+      await Members.findOneAndUpdate(
+        { id: interaction.member.id },
+        { $unset: { 'passport.marriage': '' } }
+      )
+    }
   },
 }
