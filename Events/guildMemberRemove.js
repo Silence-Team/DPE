@@ -47,7 +47,7 @@ module.exports = {
         { $unset: { 'passport.marriage': '' } }
       )
 
-      const MemberID = InvokerPassport.marriage.id
+      const MemberID = InvokerPassport?.marriage?.id
 
       const MemberData = await Members.findOne({
         id: MemberID,
@@ -55,7 +55,7 @@ module.exports = {
 
       const MemberPassport = MemberData?.passport || {}
 
-      if (Object.keys(InvokerPassport)?.length) {
+      if (Object.keys(MemberPassport)?.length) {
         await Members.findOneAndUpdate(
           { id: MemberID },
           { $unset: { 'passport.marriage': '' } }
