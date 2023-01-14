@@ -40,7 +40,7 @@ module.exports = {
     const chat = member.guild.channels.cache.get(channels.chat)
 
     if (member.user.bot) {
-      embed.setDescription(`**🔩 Добавлен бот ${member}**`).setFields({
+      embed.setDescription(`**🔩 ${member}**`).setFields({
         name: 'Зашёл',
         value: `<t:${ParseUnix(member.joinedTimestamp)}:R>`,
         inline: true,

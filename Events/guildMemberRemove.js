@@ -31,7 +31,7 @@ module.exports = {
       )
 
     if (member.user.bot) {
-      embed.setDescription(`**🔩 Удалён бот ${member}**`).setFields({
+      embed.setDescription(`**🔩 ${member}**`).setFields({
         name: 'Зашёл',
         value: `<t:${ParseUnix(member.joinedTimestamp)}:R>`,
         inline: true,
