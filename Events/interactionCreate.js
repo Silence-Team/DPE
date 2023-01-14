@@ -1,5 +1,3 @@
-const { InteractionType } = require('discord.js')
-
 module.exports = {
   run: async (interaction) => {
     let category
