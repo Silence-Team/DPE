@@ -9,6 +9,9 @@ module.exports = {
     coins: {
       default: '<a:standart_coin:883417388857557092>',
     },
+
+    minus: '<:minus:1075674069917249626>',
+    plus: '<:plus:1075674072383496203>',
   },
   channels: {
     chat: '1016720444335857764',

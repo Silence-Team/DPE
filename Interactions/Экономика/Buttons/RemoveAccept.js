@@ -49,7 +49,7 @@ module.exports = {
     )
 
     const content = GetMessage(
-      '➖',
+      emojis.minus,
       interaction.member,
       MembersIDs,
       amount,

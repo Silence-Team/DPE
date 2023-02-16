@@ -5,7 +5,7 @@ const {
   ButtonStyle,
 } = require('discord.js')
 const Members = require('../../../Schemas/Members')
-const { channels } = require('../../../Util/Config')
+const { channels, emojis } = require('../../../Util/Config')
 const GetMessage = require('../Functions/GetMessage')
 
 module.exports = {
@@ -49,7 +49,7 @@ module.exports = {
     )
 
     const content = GetMessage(
-      '➕',
+      emojis.plus,
       interaction.member,
       MembersIDs,
       amount,

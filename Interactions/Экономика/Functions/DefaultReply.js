@@ -51,12 +51,12 @@ module.exports = async (interaction) => {
     const SecondRow = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
         .setCustomId('Add')
-        .setEmoji('➕')
+        .setEmoji(emojis.plus)
         .setLabel('Выдать')
         .setStyle(ButtonStyle.Primary),
       new ButtonBuilder()
         .setCustomId('Remove')
-        .setEmoji('➖')
+        .setEmoji(emojis.minus)
         .setLabel('Забрать')
         .setStyle(ButtonStyle.Primary)
     )
