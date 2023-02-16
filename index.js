@@ -1,4 +1,4 @@
-const { connect } = require('mongoose')
+const mongoose = require('mongoose')
 const {
   Client,
   GatewayIntentBits,
@@ -12,7 +12,6 @@ const tenor = require('tenorjs')
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildBans,
     GatewayIntentBits.GuildEmojisAndStickers,
     GatewayIntentBits.GuildIntegrations,
     GatewayIntentBits.GuildInvites,
@@ -37,10 +36,13 @@ const client = new Client({
   },
 })
 
-connect(process.env.mongo, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => console.log('MongoDB Connected'))
+mongoose
+  .set('strictQuery', false)
+  .connect(process.env.mongo, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log('MongoDB Connected'))
 
 const handlers = readdirSync('./Handlers')
 
