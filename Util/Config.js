@@ -27,11 +27,15 @@ module.exports = {
     starboard: '998320597010489444',
     roleplay: '824414657841332264',
     marriages: '864118592135626762',
+    commands: '721461374403870822',
   },
   roles: {
     moderation: {
       senior: '774252049080254495',
       junior: '825683813966938143',
+    },
+    dividers: {
+      guilds: '800743923931938886',
     },
     helper: '817002708132560907',
     eventor: '817003767869341696',
