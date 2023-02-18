@@ -21,7 +21,7 @@ module.exports = {
     )
 
     if (!id) {
-      embed.setDescription('**ID неверный**')
+      embed.setDescription('ID неверный')
 
       return await interaction.update({
         embeds: [embed],
@@ -30,12 +30,16 @@ module.exports = {
     }
 
     const MembersData = await Members.findOne({ 'warns.id': id })
+    const warn = MembersData?.warns.find((obj) => obj.id === id)
 
-    if (!MembersData) {
-      embed.setDescription('**Предупреждение не найдено**')
+    if (!warn) {
+      embed.setDescription('Предупреждение не найдено')
+
+      return await interaction.update({
+        embeds: [embed],
+        components: [BackRow],
+      })
     }
-
-    const warn = MembersData.warns.find((obj) => obj.id === id)
 
     const description = `⚠️ <@${MembersData.id}>: ${
       MembersData.warns.indexOf(warn) + 1
@@ -43,7 +47,7 @@ module.exports = {
       interaction.member.permissions.has(
         PermissionsBitField.Flags.Administrator
       )
-        ? `\n🛡️ ${interaction.member}`
+        ? `\n🛡️ <@${warn.moderator}>`
         : ''
     }\n\n📃 ${warn.reason}`
 
