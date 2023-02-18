@@ -8,7 +8,7 @@ module.exports = async (OldState, NewState) => {
   const member = OldState.member
 
   const embed = new EmbedBuilder()
-    .setColor(colors.blurple)
+    .setColor(colors.yellow)
     .setDescription(`**${member} ${OldState.channel} ➡️ ${NewState.channel}**`)
 
   await channel.send({ embeds: [embed] })
