@@ -1,19 +1,8 @@
 const { Schema, model } = require('mongoose')
 
 const schema = Schema({
-  guildID: String,
-  channels: {
-    guilds: String,
-  },
-  categories: {
-    guilds: String,
-  },
-  webhooks: {
-    starboard: String,
-  },
-  dividers: {
-    guilds: String,
-  },
+  id: Number,
+  warns: Number,
 })
 
 module.exports = model('Settings', schema)

@@ -12,6 +12,16 @@ const schema = Schema({
       timestamp: Number,
     },
   },
+  warns: [
+    {
+      date: Date,
+      id: Number,
+      moderatorID: String,
+      reason: String,
+      attachment: String,
+    },
+  ],
+  simpUntil: Date,
 })
 
 module.exports = model('Members', schema)
