@@ -58,7 +58,7 @@ module.exports = {
       })
     }
 
-    if (TargetHighestRole.position > MembersHighestRole.position) {
+    if (TargetHighestRole.position >= MembersHighestRole.position) {
       return interaction.reply({
         content: '**Ты не можешь выдать варн пользователю выше тебя**',
         ephemeral: true,
@@ -111,14 +111,6 @@ module.exports = {
         .setLabel('Снять')
         .setEmoji('✋')
     )
-
-    if (
-      !interaction.member.permissions.has(
-        PermissionsBitField.Flags.Administrator
-      )
-    ) {
-      row.components[0].setDisabled(true)
-    }
 
     const message = await WarnsChannel.send({ embeds: [embed] })
     await interaction.reply({
