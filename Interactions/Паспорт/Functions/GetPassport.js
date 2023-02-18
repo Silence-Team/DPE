@@ -19,6 +19,7 @@ module.exports = async (member, invoker) => {
       name: member.displayName,
       iconURL: member.displayAvatarURL(),
     })
+    .setTitle('📝 Паспорт')
     .addFields(
       {
         name: '✏️ О себе',

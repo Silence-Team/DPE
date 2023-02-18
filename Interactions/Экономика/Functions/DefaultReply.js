@@ -19,6 +19,7 @@ module.exports = async (interaction) => {
       name: interaction.member.displayName,
       iconURL: interaction.member.displayAvatarURL(),
     })
+    .setTitle('💴 Экономика')
     .setDescription(
       `**Баланс:** ${MemberData?.balance || 0}  ${emojis.coins.default}`
     )
