@@ -27,7 +27,7 @@ module.exports = {
 
     const SecondRow = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
-        .setStyle(ButtonStyle.Primary)
+        .setStyle(ButtonStyle.Secondary)
         .setCustomId('Economics')
         .setLabel('Назад')
         .setEmoji('⬅️')

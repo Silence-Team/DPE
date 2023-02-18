@@ -43,7 +43,7 @@ module.exports = {
 
     const row = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
-        .setStyle(ButtonStyle.Primary)
+        .setStyle(ButtonStyle.Secondary)
         .setCustomId('Economics')
         .setLabel('Назад')
         .setEmoji('⬅️')
