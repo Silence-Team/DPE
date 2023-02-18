@@ -44,12 +44,12 @@ module.exports = {
     const TargetHighestRole = member.roles.highest
     const MembersHighestRole = interaction.member.roles.highest
 
-    // if (interaction.member === member) {
-    //   return interaction.reply({
-    //     content: '**Нельзя выдать предупреждение себе**',
-    //     ephemeral: true,
-    //   })
-    // }
+    if (interaction.member === member) {
+      return interaction.reply({
+        content: '**Нельзя выдать предупреждение себе**',
+        ephemeral: true,
+      })
+    }
 
     if (member.user.bot) {
       return interaction.reply({
