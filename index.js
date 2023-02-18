@@ -8,6 +8,7 @@ const {
 } = require('discord.js')
 const { readdirSync } = require('fs')
 const tenor = require('tenorjs')
+const chalk = require('chalk')
 
 const client = new Client({
   intents: [
@@ -42,7 +43,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log('MongoDB Connected'))
+  .then(() => console.log(chalk.greenBright('MongoDB Connected')))
 
 const handlers = readdirSync('./Handlers')
 
@@ -51,7 +52,7 @@ handlers.forEach((name) => {
   client[name.toLowerCase()] = new Collection()
   const handler = require(`./Handlers/${name}`)
   handler.run(client)
-  console.log(`Handler ${name} executed`)
+  console.log(chalk.yellowBright(`Handler ${name} executed`))
 })
 
 client.tenor = tenor.client({
