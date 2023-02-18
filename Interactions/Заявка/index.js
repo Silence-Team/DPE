@@ -17,7 +17,7 @@ module.exports = {
       {
         name: 'должность',
         type: ApplicationCommandOptionType.String,
-        description: 'На какую должность Вы хотите подать заявку ?',
+        description: 'На какую должность Вы хотите подать заявку?',
         choices: [
           {
             name: 'ивентор',
